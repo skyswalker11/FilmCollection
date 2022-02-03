@@ -49,7 +49,9 @@ namespace FilmCollection.Controllers
         {
             if(ModelState.IsValid)
             {
-                 _MFContext.Add(ar);
+                ViewBag.Categories = _MFContext.Category.ToList();
+
+                _MFContext.Add(ar);
                  _MFContext.SaveChanges();
 
                  return View();
